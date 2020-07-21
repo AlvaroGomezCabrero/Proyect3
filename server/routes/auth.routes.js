@@ -6,8 +6,8 @@ const User = require("../models/User.model")
 const bcrypt = require("bcrypt")
 
 
-
 router.post('/signup', (req, res, next) => {
+    console.log("signup")
 
     const username = req.body.username;
     const password = req.body.password;

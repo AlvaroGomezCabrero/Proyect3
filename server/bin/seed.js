@@ -9,7 +9,7 @@ mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: tr
 
 //Model
 
-const Course  = require('../models/Course.model')
+const Course = require('../models/Course.model')
 
 //Course.collection.drop();
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import CoasterService from '../../../service/CourseService'
+import CoasterService from '../../../service/CoasterService'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'

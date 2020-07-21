@@ -5,9 +5,6 @@ const userSchema = new Schema({
     username: {
         type: String
     },
-    email: {
-        type: String
-    },
     password: {
         type: String
     },
@@ -19,8 +16,9 @@ const userSchema = new Schema({
     ],
     role: {
         type: String,
-        enum: ['ADMIN', 'USER']
-    },
+        enum: ['ADMIN', 'USER'], 
+        default: 'USER'
+    }
 
 }, {
     timestamps: true
