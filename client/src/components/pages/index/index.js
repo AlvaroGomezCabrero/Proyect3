@@ -4,8 +4,9 @@ const Index = () => {
 
     return (
         <>
-            <h1>CoastersApp_</h1>
-            <p>Perder la cabeza a saco</p>
+            <h1>Espacio _Z</h1>
+            <h2>El teatro como encuentro social</h2>
+            <p>Descubre, comparte, interpreta</p>
         </>
     )
 }
