@@ -35,6 +35,7 @@ class SignupForm extends Component {
                 this.props.history.push('/coasters')
             })
             .catch(err => console.log(err.response.data.message))   // Error handling yay!
+        
     }
 
     render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CoasterService from '../../../service/CoasterService'
+import CoasterService from '../../../service/CourseService'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'

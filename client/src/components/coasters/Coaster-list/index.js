@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CoasterService from '../../../service/CoasterService'
+import CoasterService from '../../../service/CourseService'
 
 import CoasterCard from './Coaster-card'
 import CoasterForm from './../Coaster-form'
