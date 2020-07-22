@@ -57,7 +57,7 @@ class LoginForm extends Component {
                             <Form.Group>
                                 <Form.Label>Contraseña</Form.Label>
                                 <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" />
-                                <Form.Text className="text-muted">Mínimo tres caracteres, mangurrián.</Form.Text>
+                                <Form.Text className="text-muted">Mínimo tres caracteres.</Form.Text>
                             </Form.Group>
 
                             <Button variant="dark" type="submit">Iniciar sesión</Button>

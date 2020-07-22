@@ -1,27 +1,27 @@
 import React, { Component } from 'react'
-import CoasterService from '../../../service/CoasterService'
+import UserService from '../../../service/UserService'
+
+import Container from 'react-bootstrap/Container'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
+
+
 class ProfileForm extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            name: '',
-            surname: '',
             description: '',
             theater_play: '',
             author: '',
             genre: '',
-            favourite:'',
-            my_courses: '',
             role: '',
             ad_item: '',
             showModal: false
         }
-        this.coasterService = new CoasterService()
+        this.service = new UserService()
     }
 
     handleInputChange = e => {
@@ -32,7 +32,7 @@ class ProfileForm extends Component{
 
     handleFormSubmit = e => {
         e.preventDefault()
-        this.CoasterService
+        this.UserService
             .createCoaster(this.state)
             .then(response => response.data)
             .catch(err => console.log(err))
@@ -40,38 +40,66 @@ class ProfileForm extends Component{
 
     handleModalShow = () => this.setState({ showModal: true })
     handleModalClose = () => this.setState({ showModal: false })
-    
+
+
+
     render() {
-        
+
         return (
             <>
-                <h1>Este es tu escenario</h1>
-            
-                <Form onSubmit={this.handleFormSubmit}>
+                <Container as="main" className="profile-page">
                     
-                <Form.Group>
-                    <Form.Label>Nombre</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.name} name="name" type="text"/>
-                </Form.Group>
+                    <h1>Bienvenido</h1>
 
-                <Form.Group>
-                    <Form.Label>Apellido</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.surname} name="surname" type="text" />
-                </Form.Group>
+                    <Form>
+                        <Form.Group>
+                            <Form.Label>Nombre</Form.Label>
+                        </Form.Group>
 
-                <Form.Group>
-                    <Form.Label>Breve Descripción</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.description} name="description" type="text" />
-                    <Form.Text className="text-muted"> Añade una breve descripción sobre ti</Form.Text>
-                    </Form.Group>
-                </Form>
+                        <Form.Label>Favoritos</Form.Label>
+                        <Form.Control as="select">
+                            <option>Comedia</option>
+                            <option>Tragedia</option>
+                            <option>Infantil</option>
+                            <option>Mímica</option>
+                        </Form.Control>
 
-                {
-                    this.props.loggedInUser && <Button onClick={this.handleModalShow} variant="dark" size="sm" style={{ marginBottom: '20px' }}>Crear nuevo item</Button>
-                }
+                        <Form.Label>Cursos</Form.Label>
+                        <Form.Control as="select">
+                            <option>Ninguno</option>
+                            <option>Interpretación y dramatización</option>
+                            <option>Gestual</option>
+                            <option>Maquillaje y caracterización</option>
+                        </Form.Control>
+
+                        <hr></hr>
+
+
+                        <Form.Group>
+                            <Button onClick={this.handleModalShow} variant="dark" size="sm" style={{ marginBottom: '20px' }} type="submit">Enviar</Button>
+                        </Form.Group>
+                    </Form> 
+
+
+
+
+
+
+
+
+
+
+
+                    
+                    {
+                        this.props.loggedInUser && <Button onClick={this.handleModalShow} variant="dark" size="sm" style={{ marginBottom: '20px' }}> Crear nuevo item</Button>
+                    }
+
+                </Container>
+
+                
 
                 <Modal show={this.state.showModal} onHide={this.handleModalClose}>
-                    
 
                 <Modal.Body>
                 <Form onSubmit={this.handleFormSubmit}>
@@ -82,9 +110,9 @@ class ProfileForm extends Component{
 
                 <Form.Group>
                     <Form.Label>Autor</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.author} name="author" type="text" />                    
+                    <Form.Control onChange={this.handleInputChange} value={this.state.author} name="author" type="text" />
                 </Form.Group>
-                
+
                 <Form.Group>
                     <Form.Label>Género</Form.Label>
                     <Form.Control onChange={this.handleInputChange} value={this.state.genre} name="genre" type="text" />
@@ -98,21 +126,22 @@ class ProfileForm extends Component{
 
                 <Form.Group>
                     <Form.Label>Añadir Ítem</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.ad_item} name="ad_item" type="text" />                        
+                    <Form.Control onChange={this.handleInputChange} value={this.state.ad_item} name="ad_item" type="text" />
                     <Form.Text className="text-muted"> Añade un video, una foto, una noticia...</Form.Text>
                 </Form.Group>
-                  
-                <Button variant="dark" type="submit">Enviar</Button>           
-                 
+
+                <Button variant="dark" type="submit">Enviar</Button>
+
                 </Form>
                 </Modal.Body>
                 </Modal>
            </>
- 
+
         )
-            
+
     }
 }
+
 
 export default ProfileForm
 
