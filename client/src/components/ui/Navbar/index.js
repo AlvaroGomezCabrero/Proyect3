@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
+import ButtonGroup from 'react-bootstrap/Button Group'
+
 import AuthService from './../../../service/AuthService'
 
 import { Link, NavLink } from 'react-router-dom'
@@ -38,6 +40,12 @@ class Navigation extends Component {
                         </Nav.Link>
                         <Nav.Link as="span">
                             <NavLink to="/coasters" activeStyle={{ color: 'white' }}>Montañas</NavLink>
+                        </Nav.Link>
+                        <Nav.Link as="span">
+                            <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-nested-dropdown">
+                            <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
+                            <NavLink to="/courses" activeStyle={{ color: 'white' }}>Cursos</NavLink>
+                            </DropdownButton>
                         </Nav.Link>
 
                         {this.props.loggedInUser ?

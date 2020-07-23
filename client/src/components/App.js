@@ -15,6 +15,8 @@ import SignupForm from './auth/Signup-form'
 import LoginForm from './auth/Login-form'
 import ProfilePage from './pages/profile'
 import IndexPage from './pages/index'
+import CoursesList from './courses/course-card'
+import CourseDetail from './courses/index'
 
 
 class App extends Component {
@@ -67,7 +69,9 @@ class App extends Component {
           <Route path="/coasters/:coaster_id" render={props => <CoasterDetail {...props} />} />
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
-          <Route path="/profile" render={() => <ProfilePage loggedInUser={this.state.loggedInUser}/>} />
+          <Route path="/profile" render={() => <ProfilePage loggedInUser={this.state.loggedInUser} />} />
+          <Route exact path="/courses" render={() => <CoursesList loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/courses/:course_id" render={props => <CourseDetail {...props} />} />
         </Switch>
 
         <Message {...this.state.toast} handleToast={this.handleToast} />
