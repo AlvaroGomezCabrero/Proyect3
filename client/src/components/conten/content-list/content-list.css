@@ -1,0 +1,8 @@
+.content-card {
+    margin-bottom: 40px;
+}
+
+.content-card img {
+    height: 80px;
+    object-fit: cover;
+}

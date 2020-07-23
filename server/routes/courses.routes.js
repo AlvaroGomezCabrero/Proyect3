@@ -13,7 +13,7 @@ router.get('/getAllCourses', (req, res, next) => {
 
 router.get('/getOneCourse/:course_id', (req, res, next) => {
 
-    Course.findById(req.params.coaster_id)
+    Course.findById(req.params.course_id)
         .then(response => res.json(response))
         .catch(err => next(err))
 })

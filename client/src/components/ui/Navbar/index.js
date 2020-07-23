@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
-import ButtonGroup from 'react-bootstrap/Button Group'
-
 import AuthService from './../../../service/AuthService'
 
 import { Link, NavLink } from 'react-router-dom'
@@ -28,38 +26,42 @@ class Navigation extends Component {
 
     render() {
         return (
-            <Navbar bg="dark" variant="dark" expand="lg" sticky="top" >
+            <Navbar bg="info" variant="info" expand="lg" sticky="top" >
                 <Navbar.Brand>
-                    <Link to="/">CoastersApp_</Link>
+                    <Link to="/">Espacio_Z</Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link as="span">
-                            <NavLink to="/" exact activeStyle={{ color: 'white' }}>Inicio</NavLink>
+                            <NavLink to="/" exact activeStyle={{ color: 'black' }}>Inicio</NavLink>
                         </Nav.Link>
+                    
                         <Nav.Link as="span">
-                            <NavLink to="/coasters" activeStyle={{ color: 'white' }}>Montañas</NavLink>
-                        </Nav.Link>
-                        <Nav.Link as="span">
-                            <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
-                            <NavLink to="/courses" activeStyle={{ color: 'white' }}>Cursos</NavLink>
-                            </DropdownButton>
+                            <NavLink to="/courses" activeStyle={{ color: 'black' }}>Cursos</NavLink>
                         </Nav.Link>
 
                         {this.props.loggedInUser ?
                             (
+                               
+                                <Nav.Link as="span">
+                                    <span onClick={this.isLoggedIn} to="/conten" activeStyle={{ color: 'black' }}>Contenido</span>
+                                </Nav.Link>
+
+                            )(
+
                                 <Nav.Link as="span">
                                     <span onClick={this.logout}>Cerrar sesión</span>
                                 </Nav.Link>
-                            ) : (
+                            )
+
+                             : (
                                 <>
                                     <Nav.Link as="span">
-                                        <NavLink to="/signup" activeStyle={{ color: 'white' }}>Registro</NavLink>
+                                        <NavLink to="/signup" activeStyle={{ color: 'black' }}>Registro</NavLink>
                                     </Nav.Link>
                                     <Nav.Link as="span">
-                                        <NavLink to="/login" activeStyle={{ color: 'white' }}>Inicio sesión</NavLink>
+                                        <NavLink to="/login" activeStyle={{ color: 'black' }}>Inicio sesión</NavLink>
                                     </Nav.Link>
                                 </>
                             )

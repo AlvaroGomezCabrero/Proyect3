@@ -7,16 +7,18 @@ import AuthService from './../service/AuthService'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Navigation from './ui/Navbar'
-import Message from './ui/CustomToast'
 
-import CoastersList from './coasters/Coaster-list/'
-import CoasterDetail from './coasters/Coaster-detail/'
+
 import SignupForm from './auth/Signup-form'
 import LoginForm from './auth/Login-form'
 import ProfilePage from './pages/profile'
 import IndexPage from './pages/index'
-import CoursesList from './courses/course-card'
-import CourseDetail from './courses/index'
+
+import CourseList from './courses/course-list'
+import CourseDetail from './courses/course-detail'
+
+
+import ContentList from './conten/content-list'
 
 
 class App extends Component {
@@ -25,11 +27,8 @@ class App extends Component {
     super()
     this.state = {
       loggedInUser: null,
-      toast: {
-        visible: false,
-        text: ''
-      }
     }
+
     this.AuthService = new AuthService()
   }
 
@@ -40,12 +39,6 @@ class App extends Component {
       .isLoggedIn()
       .then(response => this.state.loggedInUser === null && this.setState({ loggedInUser: response.data }))
       .catch(err => console.log({ err }))
-  }
-
-  handleToast = (visible, text = '') => {
-    let toastCopy = { ...this.state.toast }
-    toastCopy = { visible, text }
-    this.setState({ toast: toastCopy })
   }
 
   render() {
@@ -60,21 +53,21 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" render={() => <IndexPage />} />
-
-          <Route path="/profile" render={() =>
-            this.state.loggedInUser ? <ProfilePage loggedInUser={this.state.loggedInUser} /> : <Redirect to='/signup' />}
-          />
-
-          <Route exact path="/coasters" render={() => <CoastersList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/coasters/:coaster_id" render={props => <CoasterDetail {...props} />} />
+          <Route path="/profile" render={() => this.state.loggedInUser ? <ProfilePage loggedInUser={this.state.loggedInUser} /> : <Redirect to='/signup' />}/>
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/profile" render={() => <ProfilePage loggedInUser={this.state.loggedInUser} />} />
-          <Route exact path="/courses" render={() => <CoursesList loggedInUser={this.state.loggedInUser} />} />
+
+          <Route exact path="/courses" render={() => <CourseList loggedInUser={this.state.loggedInUser} />} />
           <Route path="/courses/:course_id" render={props => <CourseDetail {...props} />} />
+
+          <Route exact path="/conten" render={() => <ContentList loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/conten/:conten_id" render={() => <ContentList loggedInUser={this.state.loggedInUser} />} />
+
         </Switch>
 
-        <Message {...this.state.toast} handleToast={this.handleToast} />
+        {/* Añadir un Footer */}
+
 
       </>
 

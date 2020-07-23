@@ -36,7 +36,7 @@ class ProfileForm extends Component{
     handleFormSubmit = e => {
         e.preventDefault()
         this.UserService
-            .createCoaster(this.state)
+            .createContent(this.state)
             .then(response => response.data)
             .catch(err => console.log(err))
     }
@@ -77,12 +77,12 @@ class ProfileForm extends Component{
 
 
                         <Form.Group>
-                            <Button onClick={this.handleModalShow} variant="dark" size="sm" style={{ marginBottom: '20px' }} type="submit">Enviar</Button>
+                            <Button onClick={this.handleModalShow} variant="info" size="sm" style={{ marginBottom: '20px' }} type="submit">Enviar</Button>
                         </Form.Group>
                     </Form> 
                     
                     {
-                        this.props.loggedInUser && <Button onClick={this.handleModalShow} variant="dark" size="sm" style={{ marginBottom: '20px' }}> Crear nuevo item</Button>
+                        this.props.loggedInUser && <Button onClick={this.handleModalShow} variant="info" size="sm" style={{ marginBottom: '20px' }}> Crear nuevo item</Button>
                     }
 
                 </Container>

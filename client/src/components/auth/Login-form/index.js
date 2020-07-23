@@ -60,7 +60,7 @@ class LoginForm extends Component {
                                 <Form.Text className="text-muted">Mínimo tres caracteres.</Form.Text>
                             </Form.Group>
 
-                            <Button variant="dark" type="submit">Iniciar sesión</Button>
+                            <Button variant="info" type="submit">Iniciar sesión</Button>
                         </Form>
 
                     </Col>

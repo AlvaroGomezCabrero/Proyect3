@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
 import CourseService from '../../../service/courseService'
 
-import CourseCard from './course-card'
-
 import './course-list.css'
 
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
-
-
 
 
 class CourseList extends Component {
@@ -49,14 +44,6 @@ class CourseList extends Component {
 
                     {
                         this.props.loggedInUser && <Button onClick={() => this.handleModal(true)} variant="dark" size="sm" style={{ marginBottom: '20px' }}>Crear nuevo item</Button>
-                    }
-
-                    {
-
-                            <Row>
-                                {this.state.courses.map(elm => <CourseCard key={elm._id} {...elm} />)}
-                            </Row>
-
                     }
 
                 </Container>

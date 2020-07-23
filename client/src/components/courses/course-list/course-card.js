@@ -2,12 +2,14 @@ import React from 'react'
 
 import Carousel from 'react-bootstrap/Carousel'
 
+import { Link } from 'react-router-dom'
 
-const CourseCard = ({ _id, title, description, imageUrl, participants }) => {
+
+const CourseCard = ({ title, description, imageUrl, participants }) => {
 
 
     return (
-        <Carousel>
+        <Carousel className='course-card'>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
@@ -15,9 +17,8 @@ const CourseCard = ({ _id, title, description, imageUrl, participants }) => {
                     alt="Interpretación y Dramatización"
                 />
                 <Carousel.Caption>
-                    <h3>Interpretación y Dramatización</h3>
-                    <p>"El conocimiento de distintos personajes, 
-                    el espacio donde se desenvuelven y el conflicto a interpretar"</p>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -50,3 +51,38 @@ const CourseCard = ({ _id, title, description, imageUrl, participants }) => {
 }
 
 export default CourseCard
+
+
+
+
+
+
+
+
+
+
+
+{/* <Card style={{ width: '18rem' }}>
+  <Card.Body>
+    <Card.Title>Card Title</Card.Title>
+    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Card.Link href="#">Card Link</Card.Link>
+    <Card.Link href="#">Another Link</Card.Link>
+  </Card.Body>
+</Card> */}
+
+
+
+
+
+
+
+
+
+//Interpretación y Dramatización
+// "El conocimiento de distintos personajes, 
+// el espacio donde se desenvuelven y el conflicto a interpretar"
