@@ -9,10 +9,12 @@ import Modal from 'react-bootstrap/Modal'
 
 
 
+
 class ProfileForm extends Component{
     constructor(props) {
         super(props)
         this.state = {
+            username: '',
             description: '',
             theater_play: '',
             author: '',
@@ -23,6 +25,7 @@ class ProfileForm extends Component{
         }
         this.service = new UserService()
     }
+
 
     handleInputChange = e => {
         const { name, value } = e.target
@@ -47,15 +50,13 @@ class ProfileForm extends Component{
 
         return (
             <>
-                <Container as="main" className="profile-page">
-                    
-                    <h1>Bienvenido</h1>
-
+                <Container as="main" className="profile-page" >
+              
+                    { 
+                        <h1>Bienvenido a tu espacio, {this.props.loggedInUser.username} </h1>
+                    }
                     <Form>
-                        <Form.Group>
-                            <Form.Label>Nombre</Form.Label>
-                        </Form.Group>
-
+                        
                         <Form.Label>Favoritos</Form.Label>
                         <Form.Control as="select">
                             <option>Comedia</option>
@@ -79,17 +80,6 @@ class ProfileForm extends Component{
                             <Button onClick={this.handleModalShow} variant="dark" size="sm" style={{ marginBottom: '20px' }} type="submit">Enviar</Button>
                         </Form.Group>
                     </Form> 
-
-
-
-
-
-
-
-
-
-
-
                     
                     {
                         this.props.loggedInUser && <Button onClick={this.handleModalShow} variant="dark" size="sm" style={{ marginBottom: '20px' }}> Crear nuevo item</Button>

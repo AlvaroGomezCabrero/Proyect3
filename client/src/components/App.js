@@ -67,6 +67,7 @@ class App extends Component {
           <Route path="/coasters/:coaster_id" render={props => <CoasterDetail {...props} />} />
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
+          <Route path="/profile" render={() => <ProfilePage loggedInUser={this.state.loggedInUser}/>} />
         </Switch>
 
         <Message {...this.state.toast} handleToast={this.handleToast} />

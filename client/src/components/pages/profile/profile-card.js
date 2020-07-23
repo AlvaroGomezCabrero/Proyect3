@@ -11,7 +11,7 @@ class ProfileDetails extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: '',
+            username: '',
             surname: '',
             description: '',
             my_courses: '',
@@ -39,12 +39,12 @@ class ProfileDetails extends Component {
 
                 <Form>
                 <Form.Group>
-                    <Form.Label>Nombre</Form.Label>
+                        <Form.Label>{this.state.username}</Form.Label>
                 </Form.Group>
 
                     <Form.Label>Favoritos</Form.Label>
                     <Form.Control as="select" disabled>
-                        <option>Comdia</option>
+                        <option>Comedia</option>
                         <option>Tragedia</option>
                         <option>Infantil</option>
                         <option>Mímica</option>
