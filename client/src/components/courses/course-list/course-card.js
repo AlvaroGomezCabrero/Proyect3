@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
 
 
-const CourseCard = ({ title, description, imageUrl, }) => {
+const CourseCard = ({ _id, title, description, imageUrl, }) => {
 
 
     return (
@@ -16,8 +16,9 @@ const CourseCard = ({ title, description, imageUrl, }) => {
         <Card.Title>{title}</Card.Title>
             <Card.Text>
             {description}
-        </Card.Text>
-            <Link to= "" variant="primary"></Link>
+            </Card.Text>
+        <Link to={`/courses/${_id}`} className="btn btn-info btn-block btn-sm">Ver detalles</Link>
+        <Link to= "/" variant="primary">Volver</Link>
         </Card.Body>
      </Col>
    

@@ -38,7 +38,7 @@ export default class courseList extends Component{
                     !this.state.courses.length ? <h3>CARGANDO</h3> :
                         
                 <Row>
-                            {this.state.courses.map(elm => <CourseCard key={elm._id} {...elm} />)}
+                    {this.state.courses.map(elm => <CourseCard key={elm._id} {...elm} />)}
                 </Row>
                    
                 }    

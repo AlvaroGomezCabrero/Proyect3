@@ -2,22 +2,12 @@
 require("dotenv").config()
 
 const mongoose = require('mongoose')
-
-
-//const dbName = 'espacioc'
-//mongoose.connect (`mongodb://localhost/${dbName}`)
-
-
-
-
-//mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.connect(`mongodb+srv://${process.env.DB_REMOTE}:${process.env.DB_REMOTE}@poiu@cluster0.ircaf.mongodbn.net/${process.env.DB}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
-
+const Course = require('../models/Course.model')
 
 
 //Model
 
-const Course = require('../models/Course.model')
+
 
 //Course.collection.drop();
 
@@ -42,10 +32,12 @@ const courses = [
 ]
 
 //Seed!
-
-Course.create(courses)
-    .then(allTheCourses => {
-        console.log(`Created ${allTheCourses.length} courses`)
-        mongoose.connection.close();
-    })
-    .catch(err => console.log('There was an error creating the ', err))
+mongoose.connect(`mongodb+srv://alvarouser:poiu@cluster0.ircaf.mongodb.net/espacioc`, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(
+        Course.create(courses)
+            .then(allTheCourses => {
+                console.log(`Created ${allTheCourses.length} courses`)
+                mongoose.connection.close();
+            })
+            .catch(err => console.log('There was an error creating the ', err))
+    )

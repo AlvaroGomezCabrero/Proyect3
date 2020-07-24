@@ -38,7 +38,7 @@ export default class ContentList extends Component {
                     !this.state.conten ? <h3>CARGANDO</h3> :
 
                     <Row> 
-                            {this.state.conten.map(elm => <ContentCard key={elm._id} {...elm} />)}
+                        {this.state.conten.map(elm => <ContentCard key={elm._id} {...elm} />)}
                     </Row> 
                 }
 

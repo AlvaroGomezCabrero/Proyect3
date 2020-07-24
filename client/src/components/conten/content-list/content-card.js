@@ -16,6 +16,7 @@ const ContentCard = ({ _id, title, description, genre }) => {
       <Card.Text>{description}</Card.Text>
       
     <Link to={`/conten/${_id}`} className='btn btn-info btn-block btn-sm'>Ver Detalles</Link>
+    
     <Link to={"/conten"} className='btn btn-info btn-block btn-sm'>Volver </Link>
     </Card.Body>
     </Card>
