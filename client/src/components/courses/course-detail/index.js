@@ -43,7 +43,7 @@ class CourseDetails extends Component {
                             <p><b>Descripción:</b> {this.state.courseDetails.description}</p>
                             <p><b>Participantes:</b> {this.state.courseDetails.participants}</p>
                             <hr></hr>
-                            <Link className="btn btn-dark btn-md" to='/courses'>Volver</Link>
+                            <Link className="btn btn-info btn-md" to='/courses'>Volver</Link>
                         </Col>
                         <Col md={{ span: 4, offset: 1 }}>
                             <img src={this.state.courseDetails.imageUrl} alt={this.state.courseDetails.title} />

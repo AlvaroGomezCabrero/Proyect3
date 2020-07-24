@@ -3,6 +3,7 @@
 }
 
 .course-card img {
+    margin-bottom: 20px;
     height: 80px;
     object-fit: cover;
 }

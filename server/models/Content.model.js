@@ -12,7 +12,7 @@ const contentSchema = new Schema({
         type: String
     },
     genre: {
-        type: String,
+        type: [String],
         enum:["comedia", "tragedia", "infantil", "mímica"]
     }
 }, {

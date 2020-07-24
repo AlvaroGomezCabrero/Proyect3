@@ -35,10 +35,10 @@ export default class ContentList extends Component {
                 <h1>Listdo de Contenidos/Eventos</h1>
 
                 {
-                    !this.state.content ? <h3>CARGANDO</h3> :
+                    !this.state.conten ? <h3>CARGANDO</h3> :
 
                     <Row> 
-                            {this.state.content.map(elm => <ContentCard key={elm._id} {...elm} />)}
+                            {this.state.conten.map(elm => <ContentCard key={elm._id} {...elm} />)}
                     </Row> 
                 }
 

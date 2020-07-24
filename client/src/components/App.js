@@ -14,11 +14,12 @@ import LoginForm from './auth/Login-form'
 import ProfilePage from './pages/profile'
 import IndexPage from './pages/index'
 
-import CourseList from './courses/course-list'
-import CourseDetail from './courses/course-detail'
+import CourseList from './courses/course-list/course-list'
+// import CourseDetail from './courses/course-detail'
 
 
-import ContentList from './conten/content-list'
+import ContentList from './conten/content-list/content-list'
+import ContentDetail from './conten/content-detail'
 
 
 class App extends Component {
@@ -58,11 +59,11 @@ class App extends Component {
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/profile" render={() => <ProfilePage loggedInUser={this.state.loggedInUser} />} />
 
-          <Route exact path="/courses" render={() => <CourseList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/courses/:course_id" render={props => <CourseDetail {...props} />} />
+          <Route path="/courses" render={() => <CourseList/>} />
+          {/* <Route path="/courses/:course_id" render={props => <CourseDetail {...props} />} /> */}
 
-          <Route exact path="/conten" render={() => <ContentList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/conten/:conten_id" render={() => <ContentList loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/conten" render={() => <ContentList />} />
+          <Route path="/conten/:conten_id" render={() => <ContentDetail />} />
 
         </Switch>
 

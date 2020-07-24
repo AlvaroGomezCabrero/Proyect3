@@ -5,14 +5,14 @@ export default class ContentService {
     constructor() {
 
         this.service = axios.create({
-            baseURL: 'http://localhost:5000/api/contents',
+            baseURL: 'http://localhost:5000/contents',
             withCredentials: true
         })
     }
 
     getAllContents = () => this.service.get('/getAllContents')
     getOneContent = id => this.service.get(`/getOneContent/${id}`)
-    newContent = id => this.service.get(`newContent/${id}`)
+    createContent = content => this.service.get('/newContent', content)
     //añadir DELETE
     //and EDIT content
 }
