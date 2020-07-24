@@ -3,9 +3,17 @@ require("dotenv").config()
 
 const mongoose = require('mongoose')
 
-const dbName = 'espacioc'
+
+//const dbName = 'espacioc'
 //mongoose.connect (`mongodb://localhost/${dbName}`)
-mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
+
+
+
+
+//mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://${process.env.DB_REMOTE}:${process.env.DB_REMOTE}@poiu@cluster0.ircaf.mongodbn.net/${process.env.DB}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
+
+
 
 //Model
 

@@ -17,7 +17,7 @@ const CourseCard = ({ title, description, imageUrl, }) => {
             <Card.Text>
             {description}
         </Card.Text>
-            <Link to= ""variant="primary"></Link>
+            <Link to= "" variant="primary"></Link>
         </Card.Body>
      </Col>
    

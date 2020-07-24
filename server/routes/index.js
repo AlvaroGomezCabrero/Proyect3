@@ -1,8 +1,17 @@
 module.exports = app => {
 
     // Base URLS
-    app.use('/', require('./auth.routes'))
-    app.use('/users', require('./users.routes'))
-    app.use('/courses', require('./courses.routes'))
-    app.use('/conten', require('./content.routes'))
+    app.use('/api', require('./auth.routes')) 
+    app.use('/api/users', require('./users.routes'))
+    app.use('/api/courses', require('./courses.routes'))
+    app.use('/api/conten', require('./content.routes'))
+
+
+    app.use((req, res) => {
+        res.sendFile(__dirname + "/public/index.html");
+    })
+
+
+
+
 }
