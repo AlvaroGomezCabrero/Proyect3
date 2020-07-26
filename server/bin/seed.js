@@ -5,17 +5,13 @@ const mongoose = require('mongoose')
 const Course = require('../models/Course.model')
 
 
-//Model
-
-
-
 //Course.collection.drop();
 
 const courses = [
     {
         title: "Interpretación y Dramatización",
         description: "Este curso aporta  a los alumnos el conocimiento de distintos personajes, el espacio donde se desenvuelven y el conflicto a interpretar, en definitiva el análisis de  distintos personajes y cómo interpretarlos.Con textos diferentes mezclar emociones. Trabajar escenas y monólogos, completado con el movimiento escénico. Todo ello bajo la perspectiva de la dirección.",
-        imageUrl: "https://www.webeac.org/wp-content/uploads/2015/05/drama-contemporaneo-206-800x600-750x400.jpgd"
+        imageUrl: "https://www.webeac.org/wp-content/uploads/2015/05/drama-contemporaneo-206-800x600-750x400.jpg"
     },
 
     {
@@ -32,12 +28,13 @@ const courses = [
 ]
 
 //Seed!
-mongoose.connect(`mongodb+srv://alvarouser:poiu@cluster0.ircaf.mongodb.net/espacioc`, { useNewUrlParser: true, useUnifiedTopology: true })
+//mongoose.connect(`mongodb+srv://alvarouser:poiu@cluster0.ircaf.mongodb.net/espacioc`, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb:localhost/${process.env.DB_LOCAL}`,{ useNewUrlParser: true, useUnifiedTopology: true })
     .then(
         Course.create(courses)
             .then(allTheCourses => {
                 console.log(`Created ${allTheCourses.length} courses`)
                 mongoose.connection.close();
             })
-            .catch(err => console.log('There was an error creating the ', err))
+            .catch(err => console.log('There was an error creating the courses ', err))
     )

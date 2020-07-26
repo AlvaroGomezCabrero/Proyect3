@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const contentSchema = new Schema({
+const materialsSchema = new Schema({
     title: {
         type: String
     },
@@ -19,5 +19,5 @@ const contentSchema = new Schema({
     timestamps: true
 })
 
-const Content = mongoose.model('content', contentSchema)
-module.exports = Content
+const Materials = mongoose.model('Materials', materialsSchema)
+module.exports = Materials

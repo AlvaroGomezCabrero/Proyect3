@@ -1,31 +1,31 @@
 const express = require('express')
 const router = express.Router()
 
-const Content = require('./../models/Content.model')
+const Material = require('./../models/Materials.model')
 
 // Endpoints
-router.get('/getAllContents', (req, res, next) => {
+router.get('/getAllMaterials', (req, res, next) => {
 
-    Content.find()
+    Material.find()
         .then(response => res.json(response))
         .catch(err => next(err))
 })
 
-router.get('/getOneContent/:content_id', (req, res, next) => {
+router.get('/getOneMaterial/:material_id', (req, res, next) => {
 
-    Content.findById(req.params.content_id)
+    Material.findById(req.params.material_id)
         .then(response => res.json(response))
         .catch(err => next(err))
 })
 
-router.post('/newContent', (req, res, next) => {
+router.post('/newMaterial', (req, res, next) => {
 
-    Content.create(req.body)
+    Material.create(req.body)
         .then(response => res.json(response))
         .catch(err => next(err))
 })
 
 
-//añadir delete and edit content
+//añadir delete and edit Material
 
 module.exports = router

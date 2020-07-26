@@ -32,7 +32,7 @@ class SignupForm extends Component {
             .then(response => {
                 this.props.setTheUser(response.data)
                 this.props.handleToast(true, 'Registro completado')
-                this.props.history.push('/profile')
+                this.props.history.push('/courses')
             })
             .catch(err => console.log(err.response.data.message))   // Error handling yay!
         

@@ -1,8 +1,9 @@
-.content-card {
+.material-card {
     margin-bottom: 40px;
 }
 
-.content-card img {
+.material-card img {
+    margin-bottom: 20px;
     height: 80px;
     object-fit: cover;
 }

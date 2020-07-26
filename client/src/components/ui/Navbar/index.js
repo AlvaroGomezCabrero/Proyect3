@@ -41,14 +41,14 @@ class Navigation extends Component {
                             <NavLink to="/courses" activeStyle={{ color: 'black' }}>Cursos</NavLink>
                         </Nav.Link>
                         <Nav.Link as="span">
-                            <NavLink to="/conten" activeStyle={{ color: 'black' }}>Contenido</NavLink>
+                            <NavLink to="/materials" activeStyle={{ color: 'black' }}>Contenido</NavLink>
                         </Nav.Link>
 
                         {this.props.loggedInUser ?
                             /* ( */
                                
                                 /* <Nav.Link as="span">
-                                    <span onClick={this.isLoggedIn} to="/conten" activeStyle={{ color: 'black' }}>Contenido</span>
+                                    <span onClick={this.isLoggedIn} to="/materials" activeStyle={{ color: 'black' }}>Contenido</span>
                                 </Nav.Link> */
 
                             /* ) */
@@ -72,7 +72,7 @@ class Navigation extends Component {
                         }
 
                         <Nav.Link as="span">
-                            <NavLink to="/profile" activeStyle={{ color: 'white' }}>Hola, {this.props.loggedInUser ? this.props.loggedInUser.username : 'invitado'}</NavLink>
+                            <NavLink to="/profile" activeStyle={{ color: 'black' }}>Hola, {this.props.loggedInUser ? this.props.loggedInUser.username : 'invitado'}</NavLink>
                         </Nav.Link>
                     </Nav>
 

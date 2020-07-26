@@ -30,13 +30,13 @@ const userSchema = new Schema({
         type: String
     },
     favourite: [
-        { type: Schema.Types.ObjectId, ref: 'content' }
+        { type: Schema.Types.ObjectId, ref: 'materials' }
     ], 
     my_courses: [
         { type: Schema.Types.ObjectId, ref: 'course' }
     ],
     role: {
-        type: String,
+        type: [String],
         enum: ['ADMIN', 'USER'], 
         default: 'USER'
     }

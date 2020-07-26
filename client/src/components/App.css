@@ -2,8 +2,13 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1583482183620-f692113aafc3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
+  background-size: cover;
   font-weight: 300;
+  color:goldenrod
 }
+
+
 
 h1, h2, h3 {
   font-weight: 300;
@@ -19,3 +24,4 @@ a, a:hover {
 img {
   width: 100%;
 }
+

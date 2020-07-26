@@ -4,7 +4,7 @@ module.exports = app => {
     app.use('/api', require('./auth.routes')) 
     app.use('/api/users', require('./users.routes'))
     app.use('/api/courses', require('./courses.routes'))
-    app.use('/api/conten', require('./content.routes'))
+    app.use('/api/materials', require('./materials.routes'))
 
 
     app.use((req, res) => {
