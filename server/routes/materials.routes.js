@@ -26,6 +26,25 @@ router.post('/newMaterial', (req, res, next) => {
 })
 
 
-//añadir delete and edit Material
+//EDITAR
+
+router.get('/updateMaterial/:material_id', (req, res, next) => {
+
+    Material.findByIdAndupdate(req.params.material_id)
+        .then(response => res.json(response))
+        .catch(err => next(err))
+})
+
+
+//ELIMINAR
+
+router.get('/deleteMaterial/:material_id', (req, res, next) => {
+
+    Material.findByIdAndDelete(req.params.material_id)
+        .then(response => res.json(response))
+        .catch(err => next(err))
+})
+
+
 
 module.exports = router

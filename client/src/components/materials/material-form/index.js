@@ -1,61 +1,117 @@
-import React, { Component } from 'react'
-import MaterialService from '../../../service/MaterialService'
+// import React, { Component } from 'react'
+// import MaterialsService from '../../../service/MaterialsService'
 
 
-import './material-list.css'
+// import './material-form.css'
+// import Form from 'react-bootstrap/Form'
+// import Button from 'react-bootstrap/Button'
+// import Modal from 'react-bootstrap/Modal'
+
+// import Container from 'react-bootstrap/Container'
 
 
 
-class MaterialForm extends Component {
-    constructor() {
-        super()
-        this.state = {
-            title: '',
-            description: '',
-            imageURL: '',
-            genre: '',
+// class MaterialForm extends Component {
+//     constructor() {
+//         super()
+//         this.state = {
+//             title: '',
+//             description: '',
+//             theater_play: '',
+//             author: '',
+//             imageURL: '',
+//             genre: '',
+//             ad_item: '',
+//             showModal: false
             
-        }
-        this.materialService = new MaterialService()
-    }
+//         }
+//         this.materialsService = new MaterialsService()
+//     }
 
-    handleInputChange = e => {
-        const { name, value } = e.target
-        this.setState({ [name]: value })
-    }
+//     handleInputChange = e => {
+//         const { name, value } = e.target
+//         this.setState({ [name]: value })
+//     }
 
-    handleFormSubmit = e => {
-        e.preventDefault()
-        this.MaterialService
-            .createContent(this.state)
-            .then(response => response.data)
-            .catch(err => console.log(err))
-    }
+//     handleFormSubmit = e => {
+//         e.preventDefault()
+//         this.MaterialsService
+//             .createMaterial(this.state)
+//             .then(response =>  console.log(response))//response.data)
+//             .catch(err => console.log(err))
+//     }
 
-    handleModalShow = () => this.setState({ showModal: true })
-    handleModalClose = () => this.setState({ showModal: false })
+//     handleModalShow = () => this.setState({ showModal: true })
+//     handleModalClose = () => this.setState({ showModal: false })
 
-    render() {
+//     render() {
 
-        return (
-            <>
-                <Container as="main" className="profile-page" >
+//         return (
 
-                    {
-                        <h2>Aquí podrás crear un foro de debate sobre un tema que te interese,
-                        podrás añadir contenido, información, vídeos...</h2>
-                    }
+            
+//                 <Container as="main" className="profile-page" >
+
+//                     {
+//                         <h5>Estos son nuestro temas comunes, pero siempre podrás añadir otro...</h5>
+//                     }
+
+//                     <Form>
+//                         Comedia <input onChange={this.handleInputChange} value={this.state.title} name="title" type="text" /> <br></br>
+//                         Breve introduccion<input onChange={this.handleInputChange}  value={this.state.description} name="description" type="text" /> <br></br>
+//                         img <input onChange={this.handleInputChange} value={this.state.imageUlr} name="imageURL" type="text" /> <br></br>
+//                     <input type="submit" value="Enviar" />
+//                     </Form> 
+
+
+                    {/* <Form>
+                        Tragedia <input onChange={this.handleInputChange} value={this.state.title} name="title" type="text" /> <br></br>
+                        Breve introduccion<input onChange={this.handleInputChange}  value={this.state.description} name="description" type="text" /> <br></br>
+                        img <input onChange={this.handleInputChange}  value={this.state.imageUlr} name="imageURL" type="text" /> <br></br>
+                    </Form> 
+
+
+                    <Form>
+                        Infantil <input onChange={this.handleInputChange} value={this.state.title} name="title" type="text" /> <br></br>
+                        Breve introduccion<input onChange={this.handleInputChange}  value={this.state.description} name="description" type="text" /> <br></br>
+                        img <input onChange={this.handleInputChange} value={this.state.imageUlr} name="imageURL" type="text" /> <br></br>
+                    </Form> 
+
+
+                    <Form>
+                        Mímica <input onChange={this.handleInputChange} value={this.state.title} name="title" type="text" /> <br></br>
+                        Breve introduccion<input onChange={this.handleInputChange}  value={this.state.description} name="description" type="text" /> <br></br>
+//                         img <input onChange={this.handleInputChange}  value={this.state.imageUlr} name="imageURL" type="text" /> <br></br>
+//                     </Form>  */}
+            
+//             </Container>
+//         )
+//     }
+// }
+
+
+// export default MaterialForm
+            
+
+
+
+
+
+
+
+{/* 
                     <Form>
                         <Form.Label>Temas</Form.Label>
                         <Form.Control as="select">
+                            <option>--Ninguno--</option>
                             <option>Comedia</option>
                             <option>Tragedia</option>
                             <option>Infantil</option>
                             <option>Mímica</option>
                         </Form.Control>
 
-                        <Form.Label>Sobre Cursos</Form.Label>
+                        <Form.Label>Sobre nuestros Cursos</Form.Label>
                         <Form.Control as="select">
+                            <option>--Ninguno--</option>
                             <option>Interpretación y dramatización</option>
                             <option>Gestual</option>
                             <option>Maquillaje y caracterización</option>
@@ -71,7 +127,7 @@ class MaterialForm extends Component {
                     {/* {
                         this.props.loggedInUser && <Button onClick={this.handleModalShow} variant="info" size="sm" style={{ marginBottom: '20px' }}> Crear nuevo item</Button>
                     } */}
-                </Container>
+                {/* </Container>
 
                     <Modal show={this.state.showModal} onHide={this.handleModalClose}>
 
@@ -108,13 +164,4 @@ class MaterialForm extends Component {
 
                 </Form>
                 </Modal.Body>
-                </Modal>
-           </>
-
-        )
-
-    }
-}
-
-
-export default MaterialForm
+                </Modal> */} 

@@ -14,15 +14,14 @@ import CourseDetail from './courses/course-detail/course-detail'
 
 import MaterialList from './materials/material-list/material-list'
 
+import MaterialForm from './materials/material-form'
+
 
 import SignupForm from './auth/Signup-form'
 import LoginForm from './auth/Login-form'
 import ProfilePage from './pages/profile'
 import IndexPage from './pages/index'
-
-
-
-//import MaterialDetail from './materials/material-detail'
+//import MaterialDetail from './materials/material-detail/material-detail'
 
 
 class App extends Component {
@@ -76,7 +75,7 @@ class App extends Component {
           <Route path="/courses/:course_id" render={props => <CourseDetail {...props}/>} /> 
 
           <Route exact path="/materials" render={() => <MaterialList loggedInUser={this.state.loggedInUser}/>} />
-          {/* <Route path="/materials/:materials_id" render={() => <MaterialDetail />} /> */}
+          <Route path="/materials/new" render={() => <MaterialForm />} />   {/* //me lo subo para evitar error 500, tema:id */}
 
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />

@@ -1,0 +1,9 @@
+.material-card {
+    margin-bottom: 40px;
+}
+
+.material-card img {
+    margin-bottom: 20px;
+    height: 80px;
+    object-fit: cover;
+}

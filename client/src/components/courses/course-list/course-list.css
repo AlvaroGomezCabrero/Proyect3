@@ -7,3 +7,10 @@
     height: 500px;
     object-fit: cover;
 }
+.course-list body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
+  background-size: cover;
+  font-weight: 300;
+  color:goldenrod
+}

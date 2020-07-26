@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import MaterialService from './../../../service/MaterialService'
+import MaterialsService from './../../../service/MaterialsService'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -13,14 +13,14 @@ class MaterialDetails extends Component{
         this.state = {
             MaterialDetails: undefined
         }
-        this.MaterialService = new MaterialService()
+        this.MaterialsService = new MaterialsService()
     }
 
     componentDidMount = () => {
 
         const id = this.props.match.params.material_id
 
-        this.MaterialService
+        this.MaterialsService
             .getOneMaterial(id)
             .then(response => this.setState({ MaterialDetails: response.data }))
             .catch(err => console.log(err))
