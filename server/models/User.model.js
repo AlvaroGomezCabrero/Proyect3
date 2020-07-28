@@ -8,6 +8,12 @@ const userSchema = new Schema({
     password: {
         type: String
     },
+    favourite: [
+        { type: Schema.Types.ObjectId, ref: 'materials' }
+    ],
+    my_courses: [
+        { type: Schema.Types.ObjectId, ref: 'course' }
+    ],
     role: {
         type: [String],
         enum: ['ADMIN', 'USER'], 

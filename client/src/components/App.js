@@ -14,19 +14,15 @@ import CourseDetail from './courses/course-detail/course-detail'
 
 import MaterialList from './materials/material-list/material-list'
 
-import MaterialForm from './materials/material-form'
-
-
-
-import ComedyList from './materials/materialCards/comedy/comedyList'
-
-
+//import MaterialForm from './materials/material-form'
 
 import SignupForm from './auth/Signup-form'
 import LoginForm from './auth/Login-form'
 import ProfilePage from './pages/profile'
 import IndexPage from './pages/index'
-//import MaterialDetail from './materials/material-detail/material-detail'
+
+//import MaterialDetails from './materials/material-detail/material-detail'
+import MaterialCard from './materials/material-list/material-card'
 
 
 class App extends Component {
@@ -73,22 +69,16 @@ class App extends Component {
           <Route exact path="/" render={() => <IndexPage />} />
 
           <Route path="/profile" render={() =>
-            this.state.loggedInUser ? <ProfilePage loggedInUser={this.state.loggedInUser} /> : <Redirect to='/signup' />} 
+            this.state.loggedInUser ? <ProfilePage loggedInUser={this.state.loggedInUser} /> : <Redirect to='/signup' />}
           />
 
           <Route exact path="/courses" render={() => <CourseList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/courses/:course_id" render={props => <CourseDetail {...props}/>} /> 
+          <Route path="/courses/:course_id" render={props => <CourseDetail {...props} />} />
 
           <Route exact path="/materials" render={() => <MaterialList loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/materials/:material_name" render={props => <MaterialCard {...props} />} /> {/* //me lo subo para evitar error 500, tema:id */}
+
           
-          <Route exact path="/materials/new-comedia" render={() => <ComedyList/>} />{/* //me lo subo para evitar error 500, tema:id */}
-
-
-          <Route path="/materials/new-tragedia" render={props => <MaterialForm {...props} />} />
-          <Route path="/materials/new-infantil" render={props => <MaterialForm {...props} />} />
-          <Route path="/materials/new-mimica" render={props => <MaterialForm {...props} />} />
-         
-
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/profile" render={() => <ProfilePage loggedInUser={this.state.loggedInUser} />} />

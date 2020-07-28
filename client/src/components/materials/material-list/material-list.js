@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import MaterialsService from '../../../service/MaterialsService'
 
+import MaterialThing from './material-thing'
+
 import MaterialCard from './material-card'
-import MaterialForm from './../material-form'
 
 import './material-list.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import { Link } from 'react-router-dom'
-import Modal from 'react-bootstrap/Modal'
+//import { Link } from 'react-router-dom'
+
 
 
 class MaterialList extends Component {
@@ -34,14 +35,6 @@ class MaterialList extends Component {
 
     }
 
-    handleModal = status => this.setState({ showModal: status })
-
-    handleMaterialSubmit = () => {
-        this.handleModal(false)
-        this.updateMaterialList()
-    }
-
-
     render() {
 
         return (
@@ -50,30 +43,27 @@ class MaterialList extends Component {
 
                 <Container as="main" className="materials-page">
 
-                    <h1>Listado de Contenidos</h1>
+                    <h1>Contenidos</h1>
 
-                    <Link to="/" variant="primary" className="btn btn-info btn-sm" >Volver</Link>
-                    <hr></hr>
-                    <Link onClick={() => this.handleModal(true)} className="btn btn-info btn-sm" to='/new-comedia' style={{ marginBottom: '20px' }}>Nuevo</Link>
+                    <h5>Acceder a :</h5>
 
-                    <h5>Estos son nuestro temas comunes, pero siempre podrás añadir otro...</h5>
-
-                    {
-                        !this.state.materials.length ? <h3>CARGANDO</h3> :
-
-                            <Row>
-                                {this.state.materials.map(elm => <MaterialCard key={elm._id} {...elm} />)}
-                            </Row>
-                    }
-
+                    <Row>
+                        <MaterialThing name="Comedia" />
+                        <hr></hr>
+                        <MaterialThing name="Tragedia" />
+                        <hr></hr>
+                        <MaterialThing name="Infantil" />
+                        <hr></hr>
+                        <MaterialThing name="Mimica" />
+                    </Row>
+                   
+                    <Row>
+                        {this.state.materials.map(elm => <MaterialCard key={elm._id} {...elm} />)}
+                    </Row>
 
                 </Container>
 
-                <Modal size="lg" show={this.state.showModal} onHide={() => this.handleModal(false)}>
-                    <Modal.Body>
-                        <MaterialForm handleMaterialSubmit={this.updateMaterialListSubmit} />
-                    </Modal.Body>
-                </Modal>
+               
 
             </>
 

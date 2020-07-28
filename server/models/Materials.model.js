@@ -2,12 +2,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const materialsSchema = new Schema({
-    title: {
-        type: String
-    },
-    description: {
-        type: String
-    },
     imageUrl: {
         type: String
     },
@@ -21,23 +15,9 @@ const materialsSchema = new Schema({
         type: String
     },
     genre: {
-        type: String
-    },
-    ad_item: {
-        type: String
-    },
-    username: {
-        type: String
-    },
-    favourite: [
-        { type: Schema.Types.ObjectId, ref: 'materials' }
-    ],
-    my_courses: [
-        { type: Schema.Types.ObjectId, ref: 'course' }
-    ],
-    genre: {
         type: [String],
-        enum:["comedia", "tragedia", "infantil", "mímica"]
+        enum: ["Comedia", "Tragedia", "Infantil", "Mímica"],
+        require: true
     }
 }, {
     timestamps: true

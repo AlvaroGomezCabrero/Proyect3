@@ -11,10 +11,10 @@ export default class MaterialsService {
     }
 
     getAllMaterials = () => this.service.get('/getAllMaterials')
-    getOneMaterial = id => this.service.get(`/getOneMaterial/${id}`)
-    createMaterial = material => this.service.post('/newMaterial', material)
+    getOneMaterial = genre => this.service.get(`/getOneMaterial/${genre}`)
+    createMaterial = genre => this.service.post('/newMaterial', genre)
 
-    updateMaterialList = id => this.service.put(`/updateMaterialList/${id}`)
-    deleteMaterial = id => this.service.get(`/deleteMaterial/${id}`)
+    //updateMaterialList = id => this.service.put(`/updateMaterialList/${id}`)
+    //deleteMaterial = id => this.service.get(`/deleteMaterial/${id}`)
 
 }
