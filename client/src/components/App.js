@@ -13,6 +13,7 @@ import CourseList from './courses/course-list/course-list'
 import CourseDetail from './courses/course-detail/course-detail'
 
 import MaterialList from './materials/material-list/material-list'
+import MaterialsService from '../service/MaterialsService'
 
 //import MaterialForm from './materials/material-form'
 
@@ -31,13 +32,23 @@ class App extends Component {
     super()
     this.state = {
       loggedInUser: null,
+      materials: [],
       toast: {
         visible: false,
-        text: ''
+        text: '',
+
       }
     }
-
+    this.materialService = new MaterialsService()
     this.AuthService = new AuthService()
+  }
+
+  updateMaterialList = () => {
+    this.materialService
+      .getAllMaterials()
+      .then(response => this.setState({ materials: response.data }))
+      .catch(err => console.log(err))
+
   }
 
   setTheUser = user => this.setState({ loggedInUser: user }, () => console.log("El estado de App ha cambiado:", this.state))
@@ -55,8 +66,10 @@ class App extends Component {
   //   this.setState({ toast: toastCopy })
   // }
 
-  render() {
+  componentDidMount = () => this.updateMaterialList()
 
+  render() {
+    console.log(this.state)
     this.fetchUser()
 
     return (
@@ -76,9 +89,9 @@ class App extends Component {
           <Route path="/courses/:course_id" render={props => <CourseDetail {...props} />} />
 
           <Route exact path="/materials" render={() => <MaterialList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/materials/:material_name" render={props => <MaterialCard {...props} />} /> {/* //me lo subo para evitar error 500, tema:id */}
+          <Route path="/materials/:material_name" render={props => <MaterialCard allMaterials={this.state.materials} {...props} />} /> {/* //me lo subo para evitar error 500, tema:id */}
 
-          
+
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/profile" render={() => <ProfilePage loggedInUser={this.state.loggedInUser} />} />
