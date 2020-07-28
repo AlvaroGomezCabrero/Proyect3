@@ -13,12 +13,11 @@ const MaterialThing = ({ name }) => {
         <Col md={6}>
 
             <Link to={`/materials/${name}`} className="btn btn-info btn-block btn-sm">{name}</Link>
-            
+
         </Col>
 
-  
+
     )
 }
 
 export default MaterialThing
-

@@ -1,11 +1,9 @@
-.material-card {
+.generic-card {
     margin-bottom: 40px;
 }
 
-.material-card img {
+.generic-card img {
     margin-bottom: 20px;
-    height: 500px;
+    height: 100px;
     object-fit: cover;
 }
-
-

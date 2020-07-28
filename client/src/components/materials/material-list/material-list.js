@@ -1,8 +1,6 @@
 import React from 'react'
 
-
 import MaterialThing from './material-thing'
-
 
 import './material-list.css'
 
@@ -11,20 +9,11 @@ import Row from 'react-bootstrap/Row'
 //import { Link } from 'react-router-dom'
 
 
-
 const MaterialList = () => {
-
-
-
-
-
-
-
 
     return (
 
         <>
-
             <Container as="main" className="materials-page">
 
                 <h1>Contenidos</h1>
@@ -42,8 +31,6 @@ const MaterialList = () => {
                 </Row>
 
             </Container>
-
-
 
         </>
 

@@ -23,7 +23,7 @@ import ProfilePage from './pages/profile'
 import IndexPage from './pages/index'
 
 //import MaterialDetails from './materials/material-detail/material-detail'
-import MaterialCard from './materials/material-list/material-card'
+import MaterialCard from './materials/material-list/listado'
 
 
 class App extends Component {
