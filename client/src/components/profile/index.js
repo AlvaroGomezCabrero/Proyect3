@@ -55,7 +55,7 @@ class ProfileForm extends Component{
                     { 
                         <h1>Bienvenido a tu espacio, {this.props.loggedInUser.username} </h1>
                     }
-                    <Form>
+                    {/* <Form>
                         
                         <Form.Label>Favoritos</Form.Label>
                         <Form.Control as="select">
@@ -79,7 +79,7 @@ class ProfileForm extends Component{
                         <Form.Group>
                             <Button onClick={this.handleModalShow} variant="info" size="sm" style={{ marginBottom: '20px' }} type="submit">Enviar</Button>
                         </Form.Group>
-                    </Form> 
+                    </Form>  */}
                     
                     {
                         this.props.loggedInUser && <Button onClick={this.handleModalShow} variant="info" size="sm" style={{ marginBottom: '20px' }}> Crear nuevo item</Button>
@@ -89,7 +89,7 @@ class ProfileForm extends Component{
 
                 
 
-                <Modal show={this.state.showModal} onHide={this.handleModalClose}>
+                {/* <Modal show={this.state.showModal} onHide={this.handleModalClose}>
 
                 <Modal.Body>
                 <Form onSubmit={this.handleFormSubmit}>
@@ -124,7 +124,7 @@ class ProfileForm extends Component{
 
                 </Form>
                 </Modal.Body>
-                </Modal>
+                </Modal> */}
            </>
 
         )

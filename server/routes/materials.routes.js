@@ -28,7 +28,7 @@ router.post('/newMaterial', (req, res, next) => {
 
 //EDITAR
 
-router.get('/updateMaterial/:material_id', (req, res, next) => {
+router.get('/updateMaterialList/:material_id', (req, res, next) => {
 
     Material.findByIdAndupdate(req.params.material_id)
         .then(response => res.json(response))

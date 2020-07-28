@@ -34,7 +34,7 @@ export default class CourseList extends Component{
             <Container as="main" className="courses-page">
                 
                 <h1>Listdo de Cursos</h1>
-                <Link to="/" variant="primary" className="btn btn-info btn-sm" >Volver</Link>
+                <Link to="/" variant="primary" className="btn btn-info btn-sm">Volver</Link>
 
                 {
                     !this.state.courses.length ? <h3>CARGANDO</h3> :

@@ -25,3 +25,11 @@ img {
   width: 100%;
 }
 
+.navbar-color{
+ background: linear-gradient(90deg, #F2F7C7,  #383D3D);
+}
+
+.button-color{
+  background-color:#F2F7C7;
+}
+

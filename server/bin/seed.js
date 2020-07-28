@@ -3,9 +3,11 @@ require("dotenv").config()
 
 const mongoose = require('mongoose')
 const Course = require('../models/Course.model')
+const Material = require('../models/Materials.model')
 
 
 //Course.collection.drop();
+//Material.collection.drop();
 
 const courses = [
     {
@@ -27,9 +29,36 @@ const courses = [
     },
 ]
 
+const materials = [
+
+    {
+        title: "Comedia",
+        description: "Dela risa a la carcajada, el mejor entretenimiento",
+        imageUrl: "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        title: "Tragedia",
+        description: "El lugar movido por la tristeza hacia un desenlace fatal",
+        imageUrl: "https://images.unsplash.com/photo-1511406361295-0a1ff814c0ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+    },
+    {
+        title: "Infantil",
+        description: "El foco de atención a los más pequeños, mostrando valores y sentimientos",
+        imageUrl: "https://images.unsplash.com/photo-1593748966033-ec8a641d4730?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+    },
+    {
+        title: "Mímica",
+        description: "La manifestación artística dejando de lado el habla y basado en la expresividad",
+        imageUrl: "https://images.unsplash.com/photo-1506780789966-15774276e069?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=776&q=80"
+    },
+    
+]
+
+
 //Seed!
 //mongoose.connect(`mongodb+srv://alvarouser:poiu@cluster0.ircaf.mongodb.net/espacioc`, { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.connect(`mongodb:localhost/${process.env.DB_LOCAL}`,{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb:localhost/${process.env.DB_LOCAL}`, { useNewUrlParser: true, useUnifiedTopology: true })
+    
     .then(
         Course.create(courses)
             .then(allTheCourses => {
@@ -37,4 +66,13 @@ mongoose.connect(`mongodb:localhost/${process.env.DB_LOCAL}`,{ useNewUrlParser: 
                 mongoose.connection.close();
             })
             .catch(err => console.log('There was an error creating the courses ', err))
+)
+    
+    .then(
+        Material.create(materials)
+            .then(allTheMaterials => {
+                console.log(`Created ${allTheMaterials.length} materials`)
+                mongoose.connection.close();
+            })
+            .catch(err => console.log('There was an error creating the materials ', err))
     )

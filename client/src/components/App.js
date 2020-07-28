@@ -17,6 +17,11 @@ import MaterialList from './materials/material-list/material-list'
 import MaterialForm from './materials/material-form'
 
 
+
+import ComedyList from './materials/materialCards/comedy/comedyList'
+
+
+
 import SignupForm from './auth/Signup-form'
 import LoginForm from './auth/Login-form'
 import ProfilePage from './pages/profile'
@@ -74,8 +79,15 @@ class App extends Component {
           <Route exact path="/courses" render={() => <CourseList loggedInUser={this.state.loggedInUser} />} />
           <Route path="/courses/:course_id" render={props => <CourseDetail {...props}/>} /> 
 
-          <Route exact path="/materials" render={() => <MaterialList loggedInUser={this.state.loggedInUser}/>} />
-          <Route path="/materials/new" render={() => <MaterialForm />} />   {/* //me lo subo para evitar error 500, tema:id */}
+          <Route exact path="/materials" render={() => <MaterialList loggedInUser={this.state.loggedInUser} />} />
+          
+          <Route exact path="/materials/new-comedia" render={() => <ComedyList/>} />{/* //me lo subo para evitar error 500, tema:id */}
+
+
+          <Route path="/materials/new-tragedia" render={props => <MaterialForm {...props} />} />
+          <Route path="/materials/new-infantil" render={props => <MaterialForm {...props} />} />
+          <Route path="/materials/new-mimica" render={props => <MaterialForm {...props} />} />
+         
 
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />

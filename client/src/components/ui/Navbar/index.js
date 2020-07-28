@@ -26,17 +26,16 @@ class Navigation extends Component {
 
     render() {
         return (
-            <Navbar bg="info" variant="info" expand="lg" sticky="top" >
+            <Navbar className="navbar-color" variant="light" expand="lg" sticky="top" >
                 <Navbar.Brand>
                     <Link to="/">Espacio_Z</Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto">
+                    <Nav className="ml-auto dark" >
                         <Nav.Link as="span">
                             <NavLink to="/" exact activeStyle={{ color: 'black' }}>Inicio</NavLink>
                         </Nav.Link>
-                    
                         <Nav.Link as="span">
                             <NavLink to="/courses" activeStyle={{ color: 'black' }}>Cursos</NavLink>
                         </Nav.Link>

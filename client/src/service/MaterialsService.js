@@ -14,7 +14,7 @@ export default class MaterialsService {
     getOneMaterial = id => this.service.get(`/getOneMaterial/${id}`)
     createMaterial = material => this.service.post('/newMaterial', material)
 
-    updateMaterial = id => this.service.get(`/updateMaterial/${id}`)
+    updateMaterialList = id => this.service.put(`/updateMaterialList/${id}`)
     deleteMaterial = id => this.service.get(`/deleteMaterial/${id}`)
-    
+
 }
