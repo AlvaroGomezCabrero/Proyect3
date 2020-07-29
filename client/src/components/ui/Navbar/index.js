@@ -19,10 +19,21 @@ class Navigation extends Component {
             .logout()
             .then(() => {
                 this.props.setTheUser(false)
-                this.props.handleToast(true, 'Usuario desconectado')
+                this.props.handleToast(true, 'Usuario Desconectado')
             })
             .catch(err => console.log(err))
     }
+
+    // isLoggedIn = () => {
+    //     this.AuthService
+    //         .isLoggedIn()
+    //         .then(() => {
+    //             this.props.setTheUser(false)
+    //             //this.props.handleToast(true, 'Usuario Conectado')
+    //         })
+    //         .catch(err => console.log(err))
+
+    // }
 
     render() {
         return (
@@ -41,16 +52,15 @@ class Navigation extends Component {
                         </Nav.Link>
                         <Nav.Link as="span">
                             <NavLink to="/materials" activeStyle={{ color: 'black' }}>Contenido</NavLink>
-                        </Nav.Link>
+                        </Nav.Link> 
 
                         {this.props.loggedInUser ?
-                            /* ( */
-                               
-                                /* <Nav.Link as="span">
+                             /* ( 
+                                <Nav.Link as="span">
                                     <span onClick={this.isLoggedIn} to="/materials" activeStyle={{ color: 'black' }}>Contenido</span>
-                                </Nav.Link> */
+                                </Nav.Link> 
 
-                            /* ) */
+                             )  */
                             (
 
                                 <Nav.Link as="span">

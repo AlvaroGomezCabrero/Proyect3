@@ -25,9 +25,9 @@ const MaterialList = () => {
                     <hr></hr>
                     <MaterialThing name="Tragedia" />
                     <hr></hr>
-                    <MaterialThing name="Infantil"  />
+                    <MaterialThing name="Infantil" />
                     <hr></hr>
-                    <MaterialThing name="Mimica"  />
+                    <MaterialThing name="Mímica" />
                 </Row>
 
             </Container>

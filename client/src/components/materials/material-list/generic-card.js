@@ -15,7 +15,7 @@ const GenericCard = ({ _id, author, genre, theater_play, description, imageUrl }
                     Breve Descripción: {description} ||| Género: {genre}
                     </Card.Text>
                     <Card.Text>Autor: {author}</Card.Text>
-                <Link to={`/materials/${_id}`} className='btn btn-outline-info navbar-color-second btn-block btn-sm'>Ver Mas</Link>
+                <Link to={`/materials/${_id}`} className='btn btn-outline-info navbar-color-second btn-block btn-sm'>Ver Detalle</Link>
          
             </Card.Body>
             </Card>

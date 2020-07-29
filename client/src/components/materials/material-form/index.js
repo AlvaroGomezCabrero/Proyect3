@@ -32,6 +32,17 @@ class MaterialForm extends Component {
             .catch(err => console.log(err))
     }
 
+//en este formulario, habrá que añadir, editar, eliminar, formulario reutilizable!
+
+
+
+
+
+
+
+
+
+
     handleModalShow = () => this.setState({ showModal: true })
     handleModalClose = () => this.setState({ showModal: false })
 

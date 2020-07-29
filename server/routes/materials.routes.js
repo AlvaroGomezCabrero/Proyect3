@@ -11,6 +11,13 @@ router.get('/getAllMaterials', (req, res, next) => {
         .catch(err => next(err))
 })
 
+router.get('/getMaterialsBy/:materialGenre', (req, res, next) => {
+
+    Material.find({ genre: req.params.materialGenre })
+        .then(response => res.json(response))
+        .catch(err => next(err))
+})
+
 router.get('/getOneMaterial/:material_id', (req, res, next) => {
 
     Material.findById(req.params.material_id)
