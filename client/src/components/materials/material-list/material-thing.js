@@ -1,9 +1,5 @@
 import React from 'react'
-
-
 import Col from 'react-bootstrap/Col'
-
-
 import { Link } from 'react-router-dom'
 
 

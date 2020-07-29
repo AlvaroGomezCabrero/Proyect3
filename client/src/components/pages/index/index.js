@@ -6,7 +6,8 @@ import Col from 'react-bootstrap/Col'
 const Index = () => {
 
     return (
-        <Container fluid>
+        <>
+           <Container fluid>
             <Row>
                 <Col md={{ offset: 3, span: 6 }}>
                     <h1>Espacio _Z</h1>
@@ -21,7 +22,8 @@ const Index = () => {
                 <p>Descubre, comparte, interpreta</p>
                 </Col>
             </Row>
-        </Container>
+         </Container>
+        </>
     )
 }
 

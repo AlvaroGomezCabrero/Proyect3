@@ -31,10 +31,10 @@ class LoginForm extends Component {
             .login(this.state)
             .then(response => {
                 this.props.setTheUser(response.data)
-               // this.props.handleToast(true, 'Sesión inciada')
+                this.props.handleToast(true, 'Sesión inciada')
                 this.props.history.push('/')
             })
-            .catch(err => console.log(err.response.data.message))   // Error handling yay!
+            .catch(err => console.log(err.response.data.message))   // Error 
     }
 
     render() {

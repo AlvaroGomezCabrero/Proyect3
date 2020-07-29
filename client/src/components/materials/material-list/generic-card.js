@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col'
 
 const GenericCard = ({ _id, author, genre, theater_play, description, imageUrl }) => {
     return (
-        <Col md={12}>
+        <Col md={6}>
             <Card className='generic-card'>
             <Card.Img variant='top' src={imageUrl} />
             <Card.Body>

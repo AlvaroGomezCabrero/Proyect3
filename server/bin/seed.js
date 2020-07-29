@@ -36,7 +36,7 @@ const materials = [
         author: "Carmelo Coton",
         genre: 'Tragedia',
         description: "lo mejor de lo mejor",
-        imageUrl: 'hay que añadir la img',
+        imageUrl: "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         
     },
 
@@ -45,7 +45,7 @@ const materials = [
         author: "Carmelo Coton",
         genre: 'Tragedia',
         description: "lo mejor de lo mejor",
-        imageUrl: 'hay que añadir la img',
+        imageUrl: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
 
     },
 
@@ -54,7 +54,7 @@ const materials = [
         author: "Dj Kicks",
         genre: 'Comedia',
         description: "breve y breve",
-        imageUrl: 'hay que añadir la img',
+        imageUrl: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
 
     },
 
@@ -63,7 +63,7 @@ const materials = [
         author: "Teren ten ten",
         genre: 'Infantil',
         description: "los peques y su imaginacion",
-        imageUrl: 'hay que añadir la img',
+        imageUrl: "https://images.unsplash.com/photo-1509645470620-c9c349934693?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80",
 
     },
 
@@ -72,7 +72,7 @@ const materials = [
         author: "el francés",
         genre: 'Mímica',
         description: "todo son gestos",
-        imageUrl: 'hay que añadir la img',
+        imageUrl: "https://images.unsplash.com/photo-1516946870798-f970a32afc8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
 
     },
 ]

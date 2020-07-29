@@ -31,10 +31,11 @@ class SignupForm extends Component {
             .signup(this.state)
             .then(response => {
                 this.props.setTheUser(response.data)
-                // this.props.handleToast(true, 'Registro completado')
-                .then(loggedInUser => this.props.history.push('/profile'))
+                this.props.handleToast(true, 'Usuario Registrado')
+                .then(loggedInUser => 
+                this.props.history.push('/profile'))
             })
-            .catch(err => console.log(err.response.data.message))   // Error handling yay!
+            .catch(err => console.log(err.response.data.message))   // Error handling!
         
     }
 

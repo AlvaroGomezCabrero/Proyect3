@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import courseService from '../../../service/CourseService'
 
+import Spinner from "../../ui/Spinner"
+
 import CourseCard from './course-card'
 
 import './course-list.css'
@@ -23,7 +25,7 @@ export default class CourseList extends Component{
     componentDidMount = () => {
         this.courseService
             .getAllCourses()
-            .then(response => this.setState({ courses: response.data }))
+            .then(response => {})
             .catch(err => console.log(err))
 
 }
@@ -37,7 +39,7 @@ export default class CourseList extends Component{
                 <Link to="/" variant="primary" className="btn btn-info btn-sm">Volver</Link>
 
                 {
-                    !this.state.courses.length ? <h3>CARGANDO</h3> :
+                    !this.state.courses.length ? <Spinner />:
                         
                 <Row>
                     {this.state.courses.map(elm => <CourseCard key={elm._id} {...elm} />)}
