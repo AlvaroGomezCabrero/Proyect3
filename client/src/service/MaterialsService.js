@@ -13,10 +13,12 @@ export default class MaterialsService {
     getAllMaterials = () => this.service.get('/getAllMaterials')
     getAllMaterialsBy = (genre) => this.service.get(`/getMaterialsBy/${genre}`)
 
+    //getOneMaterial = (genre, id) => this.service.get(`/getMaterialsBy/${genre}/${id}`)
+
+    getAllMaterialsById = (genre, id) => this.service.get(`/getMaterialsById/${genre}/${id}`)
 
 
 
-    getOneMaterial = material_id => this.service.get(`/getOneMaterial/${material_id}`)
     createMaterial = genre => this.service.post('/newMaterial', genre)
 
     //updateMaterialList = id => this.service.put(`/updateMaterialList/${id}`)

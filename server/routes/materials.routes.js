@@ -15,15 +15,17 @@ router.get('/getMaterialsBy/:materialGenre', (req, res, next) => {
 
     Material.find({ genre: req.params.materialGenre })
         .then(response => res.json(response))
-        .catch(err => next(err))
+        .catch(err => next(err)) 
 })
 
-router.get('/getOneMaterial/:material_id', (req, res, next) => {
 
-    Material.findById(req.params.material_id)
+router.get('/getMaterialsById/:materialGenre/:material_id', (req, res, next) => {
+
+    Material.findById(req.params.material_id )
         .then(response => res.json(response))
         .catch(err => next(err))
 })
+
 
 router.post('/newMaterial', (req, res, next) => {
 
@@ -35,23 +37,22 @@ router.post('/newMaterial', (req, res, next) => {
 
 //EDITAR
 
-router.get('/updateMaterialList/:material_id', (req, res, next) => {
+// router.get('/updateMaterialList/:material_id', (req, res, next) => {
 
-    Material.findByIdAndupdate(req.params.material_id)
-        .then(response => res.json(response))
-        .catch(err => next(err))
-})
+//     Material.findByIdAndupdate(req.params.material_id)
+//         .then(response => res.json(response))
+//         .catch(err => next(err))
+// })
 
 
-//ELIMINAR
+// //ELIMINAR
 
-router.get('/deleteMaterial/:material_id', (req, res, next) => {
+// router.get('/deleteMaterial/:material_id', (req, res, next) => {
 
-    Material.findByIdAndDelete(req.params.material_id)
-        .then(response => res.json(response))
-        .catch(err => next(err))
-})
-
+//     Material.findByIdAndDelete(req.params.material_id)
+//         .then(response => res.json(response))
+//         .catch(err => next(err))
+// })
 
 
 module.exports = router

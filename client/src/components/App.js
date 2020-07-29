@@ -17,7 +17,7 @@ import MaterialsService from '../service/MaterialsService'
 
 
 
-import MaterialDetail from './materials/material-detail/material-detail'
+import MaterialDetail from './materials/material-detail/Material-detail'
 
 
 
@@ -67,6 +67,7 @@ class App extends Component {
 
 
   render() {
+
     this.fetchUser()
 
     return (
@@ -86,9 +87,9 @@ class App extends Component {
           <Route path="/courses/:course_id" render={props => <CourseDetail {...props} />} />
 
           <Route exact path="/materials" render={() => <MaterialList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/materials/:material_genre" render={props => <MaterialCard {...props} />} /> {/* //me lo subo para evitar error 500, tema:id */}
+          <Route exact path="/materials/:material_genre" render={props => <MaterialCard {...props} />} /> {/* //me lo subo para evitar error 500, tema:id */}
 
-          <Route path="/materials/whatever" render={() => <MaterialDetail />} />
+          <Route exact path="/materials/:material_genre/:material_id" render={props => <MaterialDetail {...props}  />} />
 
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />

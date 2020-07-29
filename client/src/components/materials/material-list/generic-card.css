@@ -1,8 +1,10 @@
 .generic-card {
     margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .generic-card img {
+    
     margin-bottom: 20px;
     height: 100px;
     object-fit: cover;

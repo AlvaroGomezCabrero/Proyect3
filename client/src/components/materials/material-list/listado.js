@@ -17,7 +17,7 @@ class MaterialCard extends Component {
             materials: undefined
         }
 
-        this.service = new MaterialsService
+        this.service = new MaterialsService()
     }
 
     componentDidMount() {
