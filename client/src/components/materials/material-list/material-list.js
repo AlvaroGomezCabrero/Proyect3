@@ -30,6 +30,7 @@ const MaterialList = () => {
                     <hr></hr>
                     <MaterialThing name="Mímica" />
                 </Row>
+                
                 <hr></hr>
                 <Link to="/" variant="outline-warning" className="btn btn-warning  btn-sm">Volver a Inicio</Link>
 
