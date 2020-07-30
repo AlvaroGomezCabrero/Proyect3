@@ -6,6 +6,7 @@ import './material-list.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import { Link } from 'react-router-dom'
 
 
 
@@ -16,7 +17,7 @@ const MaterialList = () => {
         <>
             <Container as="main" className="materials-page">
 
-                <h1>Contenidos</h1>
+                <h1>Contenidos</h1> 
 
                 <h5>Acceder a :</h5>
 
@@ -29,6 +30,8 @@ const MaterialList = () => {
                     <hr></hr>
                     <MaterialThing name="Mímica" />
                 </Row>
+                <hr></hr>
+                <Link to="/" variant="outline-warning" className="btn btn-warning  btn-sm">Volver a Inicio</Link>
 
             </Container>
 

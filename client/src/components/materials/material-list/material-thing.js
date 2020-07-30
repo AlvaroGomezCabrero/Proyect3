@@ -9,6 +9,8 @@ const MaterialThing = ({ name }) => {
         <Col md={6}>
 
             <Link to={`/materials/${name}`} className="btn btn-warning btn-block btn-sm">{name}</Link>
+            <hr></hr>
+            
 
         </Col>
 

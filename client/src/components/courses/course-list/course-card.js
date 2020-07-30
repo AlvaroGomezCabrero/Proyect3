@@ -3,7 +3,6 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
-import Carousel from 'react-bootstrap/Carousel'
 
 
 const CourseCard = ({ _id, title, description, imageUrl, }) => {
