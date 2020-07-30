@@ -72,7 +72,7 @@ const materials = [
         author: "el francés",
         genre: 'Mímica',
         description: "todo son gestos",
-        imageUrl: "https://images.unsplash.com/photo-1516946870798-f970a32afc8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
 
     },
 ]

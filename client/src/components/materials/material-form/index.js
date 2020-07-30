@@ -88,7 +88,7 @@ class MaterialForm extends Component {
                     <Form.Text className="text-muted"> Añade una Imagen</Form.Text>
                 </Form.Group>
 
-                <Button variant="info" type="submit">Añadir</Button>
+                <Button variant="warning" type="submit">Añadir</Button>
                 </Form>
                 </Modal.Body>
                 </Modal>

@@ -73,9 +73,9 @@ class CourseDetails extends Component {
                                 </Form.Group>
                             </Form.Row>
 
-                            <Button className="btn btn-info btn-md" type="submit">Enviar</Button>
+                            <Button className="btn btn-warning btn-md" type="submit">Enviar</Button>
                             <hr></hr>
-                            <Link className="btn btn-info btn-md" to='/courses'>Volver</Link>
+                            <Link className="btn btn-warning btn-md" to='/courses'>Volver</Link>
                         </Form>
                         </Col>
                     </Row>

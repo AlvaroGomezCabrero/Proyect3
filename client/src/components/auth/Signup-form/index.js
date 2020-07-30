@@ -62,7 +62,7 @@ class SignupForm extends Component {
                                 <Form.Text className="text-muted">Mínimo tres caracteres.</Form.Text>
                             </Form.Group>
 
-                            <Button variant="info" type="submit">Registrarme</Button>
+                            <Button variant="warning" type="submit">Registrarme</Button>
                         </Form>
 
                     </Col>

@@ -31,7 +31,7 @@ class MaterialCard extends Component {
         return (
             <Container>
                 <Row>
-                    {this.state.materials ? this.state.materials.map(elm => <GenericCard {...elm} />) : <div>CARGANDO...</div>}
+                    {this.state.materials ? this.state.materials.map((elm, idx) => <GenericCard key={idx} {...elm} />) : <div>CARGANDO...</div>}
                 </Row>
             </Container>
 

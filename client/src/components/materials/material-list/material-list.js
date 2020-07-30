@@ -6,7 +6,7 @@ import './material-list.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-//import { Link } from 'react-router-dom'
+
 
 
 const MaterialList = () => {

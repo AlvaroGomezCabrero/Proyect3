@@ -89,7 +89,7 @@ class App extends Component {
           <Route exact path="/materials" render={() => <MaterialList loggedInUser={this.state.loggedInUser} />} />
           <Route exact path="/materials/:material_genre" render={props => <MaterialCard {...props} />} /> {/* //me lo subo para evitar error 500, tema:id */}
 
-          <Route exact path="/materials/:material_genre/:material_id" render={props => <MaterialDetail {...props}  />} />
+          <Route exact path="/materials/:material_genre/:material_id" render={props => <MaterialDetail {...props} />} />
 
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />

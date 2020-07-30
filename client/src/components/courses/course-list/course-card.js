@@ -3,19 +3,21 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
+import Carousel from 'react-bootstrap/Carousel'
 
 
 const CourseCard = ({ _id, title, description, imageUrl, }) => {
 
 
-    return (
+  return (
+
         <Col md={12}>
          <Card className="course-card">
          <Card.Img variant="top" src={imageUrl} />
          <Card.Body>
          <Card.Title>{title}</Card.Title>
             <Card.Text>{description}</Card.Text>
-         <Link to={`/courses/${_id}`} className="btn btn-info btn-block btn-sm">Apúntate</Link>
+         <Link to={`/courses/${_id}`} className="btn btn-warning btn-block btn-sm">Apúntate</Link>
          
            </Card.Body>
           </Card>
@@ -27,7 +29,6 @@ const CourseCard = ({ _id, title, description, imageUrl, }) => {
 export default CourseCard
 
 
-   
 
 
 

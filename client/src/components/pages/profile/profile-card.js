@@ -61,7 +61,7 @@ class ProfileDetails extends Component {
                     
                     
                 <Form.Group>
-                        <Button variant="info" type="submit">Enviar</Button>
+                        <Button variant="warning" type="submit">Enviar</Button>
                 </Form.Group>   
                 </Form>        
         )
