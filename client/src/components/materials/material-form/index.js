@@ -27,17 +27,12 @@ class MaterialForm extends Component {
         e.preventDefault()
         this.materialsService
             .createMaterial(this.state)
-            .then(() => this.props.handleMaterialSubmit())
+            .then(() => this.props.closeModal())
             .catch(err => console.log(err))
     }
 
         // en este formulario, habrá que añadir, editar, eliminar, formulario reutilizable!
 
-
-
-
-    handleModalShow = () => this.setState({ showModal: true })
-    handleModalClose = () => this.setState({ showModal: false })
 
     render() {
         return (
@@ -66,11 +61,6 @@ class MaterialForm extends Component {
                     <Form.Group>
                         <Form.Label>Descripción</Form.Label>
                         <Form.Control onChange={this.handleInputChange} value={this.state.description} name="description" type="text" />
-                    </Form.Group>
-
-                    <Form.Group>
-                        <Form.Label>Añadir Ítem</Form.Label>
-                        <Form.Control onChange={this.handleInputChange} value={this.state.ad_item} name="ad_item" type="text" />
                     </Form.Group>
 
                     <Form.Group>

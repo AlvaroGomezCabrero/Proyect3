@@ -33,8 +33,8 @@ class MaterialCard extends Component {
             .catch(err => console.log(err))
     }
 
-    handleModalShow = () => this.setState({ showModal: true })
-    handleModalClose = () => this.setState({ showModal: false })
+    handleModal = status => this.setState({ showModal: status })
+
 
     render() {
 
@@ -48,7 +48,7 @@ class MaterialCard extends Component {
                 }
                     <hr></hr>
                
-                    <Button onClick={this.handleModalShow} variant="outline-warning" className="btn btn-outline-warning btn-sm" >Crear Archivo</Button>  
+                    <Button onClick={() => this.handleModal(true)} variant="outline-warning" className="btn btn-outline-warning btn-sm" >Crear Archivo</Button>  
                     
                 <hr></hr>
                     <Link to="/materials" variant="outline-warning" className="btn btn-warning btn-sm">Volver </Link>
@@ -56,9 +56,9 @@ class MaterialCard extends Component {
 
             </Container>
 
-                <Modal show={this.state.showModal}  onHide={this.handleModalClose}>  
+                <Modal show={this.state.showModal}  onHide={() => this.handleModal(false)}>  
                 <Modal.Body>
-                    <MaterialForm /> 
+                        <MaterialForm closeModal={()=> this.handleModal(false) }/> 
                 </Modal.Body>
                 </Modal>
                 

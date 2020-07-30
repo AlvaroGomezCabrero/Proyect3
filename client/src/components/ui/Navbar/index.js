@@ -24,22 +24,12 @@ class Navigation extends Component {
             .catch(err => console.log(err))
     }
 
-    // isLoggedIn = () => {
-    //     this.AuthService
-    //         .isLoggedIn()
-    //         .then(() => {
-    //             this.props.setTheUser(false)
-    //             //this.props.handleToast(true, 'Usuario Conectado')
-    //         })
-    //         .catch(err => console.log(err))
-
-    // }
 
     render() {
         return (
             <Navbar className="navbar-color" variant="light" expand="lg" sticky="top" >
                 <Navbar.Brand>
-                    <Link to="/">Espacio_Z</Link>
+                    <Link to="/"><img src='./../../../../Webp.net-resizeimage.png'></img></Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

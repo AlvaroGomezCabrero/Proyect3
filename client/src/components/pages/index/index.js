@@ -10,7 +10,7 @@ const Index = () => {
            <Container fluid>
             <Row>
                 <Col md={{ offset: 3, span: 6 }}>
-                    <h1>Espacio _Z</h1>
+                        <h1><img src='./../../../../Webp.net-resizeimage.png'></img></h1>
                     <hr></hr>
                     <hr></hr>
                     <hr></hr>
